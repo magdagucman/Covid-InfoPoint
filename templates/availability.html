@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Availability
+{% endblock %}
+
+{% block main %}
+<form action="/availability" method="post">
+  <div class="form-group">
+    <label for="product">Product:</label><br>
+    <select class="form-control w-25" id="product" name="product">
+      <option selected disabled value="">Choose...</option>
+      <option>Canned Tomatoes</option>
+      <option>Flour</option>
+      <option>Pasta</option>
+    </select>
+  </div>
+    <div class="form-group">
+    <label for="store">Store:</label><br>
+    <select class="form-control w-25" id="store" name="store">
+      <option selected disabled value="">Choose...</option>
+      <option>Aldi</option>
+      <option>Lidl</option>
+      <option>Sainsbury's</option>
+    </select>
+  </div>
+      <div class="form-group">
+    <label for="availability">Availability:</label><br>
+    <select class="form-control w-25" id="availability" name="availability">
+      <option selected disabled value="">Choose...</option>
+      <option>None</option>
+      <option>Low</option>
+      <option>High</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" type="submit" id="thisbutton" disabled>Submit</button>
+</form>
+<script>
+  document.querySelector('#availability').onchange = function() {
+    if (document.querySelector('#product').value === '' || document.querySelector('#store').value === '' || document.querySelector('#availability').value === '') {
+      document.querySelector('#thisbutton').disabled = true;
+    }
+    else {
+          document.querySelector('#thisbutton').disabled = false;
+        }
+
+    }
+    document.querySelector('#store').onchange = function() {
+    if (document.querySelector('#product').value === '' || document.querySelector('#store').value === '' || document.querySelector('#availability').value === '') {
+      document.querySelector('#thisbutton').disabled = true;
+    }
+    else {
+          document.querySelector('#thisbutton').disabled = false;
+        }
+
+    }
+    document.querySelector('#product').onchange = function() {
+    if (document.querySelector('#product').value === '' || document.querySelector('#store').value === '' || document.querySelector('#availability').value === '') {
+      document.querySelector('#thisbutton').disabled = true;
+    }
+    else {
+          document.querySelector('#thisbutton').disabled = false;
+        }
+
+    }
+</script>
+{% endblock %}

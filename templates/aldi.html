@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Aldi
+{% endblock %}
+
+{% block main %}
+<h1>Aldi</h1>
+
+{% if products == [] %}
+    <h3> Sorry, no data available for this store!</h3>
+{% else %}
+    <table>
+         <tr>
+            <th onclick="sortTable()">Product</th>
+            <th onclick="sortTable()">Availability</th>
+            <th onclick="sortTable()">Last Updated</th>
+        </tr>
+        {% for i in range(length) %}
+            <tr>
+                <td>{{ products[i] }}</td>
+                <td>{{ availability[i] }}</td>
+                <td>{{ time[i] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+{% endblock %}

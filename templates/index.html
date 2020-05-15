@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <h1> Covid-19 Grocery Info-Point</h1>
+    <div class="forimage">
+        <img src="static/leithheart.png" alt="Leith Heart" class="images">
+    </div>
+
+    <h2>Have you recently been struggling to find some basic goods on the shelves of your local stores? Me, too! This website is meant to be a local tool for Leithers either looking for a specific article or a shop
+    that best suits their needs. Register availability of basic goods in specific stores to help others find what they are looking for and avoid excessive travel between locations.
+    The table below displays 20 newest entries. To see more, browse
+        <div class="dropdown inline">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            by product
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/canned_tomatoes">Canned Tomatoes</a>
+            <a class="dropdown-item" href="/flour">Flour</a>
+            <a class="dropdown-item" href="/pasta">Pasta</a>
+        </div>
+        </div>
+
+        or
+
+        <div class="dropdown inline">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            by shop
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/aldi">Aldi</a>
+            <a class="dropdown-item" href="/lidl">Lidl</a>
+            <a class="dropdown-item" href="/sainsburys">Sainsbury's</a>
+        </div>
+        </div>
+        .
+    </h2>
+
+   <div>
+    <table>
+        <label>Newest entries:</label>
+         <tr>
+            <th>Product</th>
+            <th>Store</th>
+            <th>Availability</th>
+            <th>Updated</th>
+        </tr>
+        {% for i in range(length) %}
+                <tr>
+                    <td>{{ products[i] }}</td>
+                    <td>{{ stores[i] }}</td>
+                    <td>{{ availability[i] }}</td>
+                    <td>{{ time[i] }}</td>
+                </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}

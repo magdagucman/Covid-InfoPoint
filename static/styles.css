@@ -1,0 +1,139 @@
+h1
+{
+    text-align: center;
+    color: black;
+    font-family: 'Sofia';
+    font-size: 3em;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+h2
+{
+    font-size: 1.5em;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 5%;
+}
+
+h3
+{
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.btn
+ {
+     background-color: #ffcccc;
+     color: grey;
+     border: 1px solid #ffcccc;
+ }
+
+.btn:hover
+ {
+     background-color: #ffb6c1;
+     color: grey;
+     border: 1px solid #ffb6c1;
+ }
+
+.btn:disabled
+{
+    background-color: grey;
+    color: #ffcccc;
+    border: 1px solid grey;
+}
+
+.forimage
+{
+
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin-top: -7%;
+    display: inline-block;
+}
+
+ .form-control
+ {
+    width: 10em;
+ }
+
+ .form-group
+ {
+     margin-top: 3%;
+ }
+
+a:hover
+{
+    color:#ffcccc;
+}
+
+a
+{
+    color:#ffb6c1;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+
+table
+{
+  width: 100%;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  max-width: 100%;
+}
+
+td, th
+{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th
+{
+    cursor: pointer;
+}
+
+tr:nth-child(even)
+{
+  background-color: #dddddd;
+}
+
+@media (max-width: 1000px) {
+td, th
+{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 2px;
+}
+}
+
+.inline
+{
+    display: inline;
+}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Flour
+{% endblock %}
+
+{% block main %}
+
+<h1>Flour</h1>
+{% if stores == [] %}
+    <h3> Sorry, no data available for this product!</h3>
+{% else %}
+<table>
+     <tr>
+        <th onclick="sortTable()">Store</th>
+        <th onclick="sortTable()">Availability</th>
+        <th onclick="sortTable()">Last Updated</th>
+    </tr>
+    {% for i in range(length) %}
+        <tr>
+            <td>{{ stores[i] }}</td>
+            <td>{{ availability[i] }}</td>
+            <td>{{ time[i] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}
